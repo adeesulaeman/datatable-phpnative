@@ -1,0 +1,21 @@
+<?php
+ob_start();
+// session_start();
+
+//database credentials
+$servername = "localhost";
+$username = "root";
+$password = "";
+$item_per_page = 1;
+
+try {
+    $db = new PDO("mysql:host=$servername;dbname=englishgate_db", $username, $password);
+    // set the PDO error mode to exception
+    $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    // echo "Connected successfully"; 
+    }
+catch(PDOException $e)
+    {
+    echo "Connection failed: " . $e->getMessage();
+    }
+?>
